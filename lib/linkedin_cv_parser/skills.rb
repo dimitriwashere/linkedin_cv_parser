@@ -6,7 +6,7 @@ class LinkedinCvParser
     end
 
     def skills
-      @skill ||= section[:text]
+      @skills ||= section[:text]
     end
     #
     # def description
@@ -37,9 +37,9 @@ class LinkedinCvParser
     #   dates[1].downcase == 'present'
     # end
     #
-    # protected
-    # attr_reader :section
-    #
+    protected
+    attr_reader :section
+
     # def get_dates(value)
     #   value = value.gsub(/\(([^\)]+)\)/,'')
     #   value.split('-').map(&:strip)
