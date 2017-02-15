@@ -41,6 +41,12 @@ class LinkedinCvParser
       end
     end
 
+    def skills
+      get_section('Skills & Expertise')[:sections].map do |section|
+        Skills.new(section)
+      end
+    end
+
     protected
     attr_reader :parser
     def get_section(value)
