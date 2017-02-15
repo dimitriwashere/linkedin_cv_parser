@@ -67,7 +67,7 @@ class LinkedinCvParser
           subsections[current_section_index][:text].push(line)
         # if listsection add to text as a list
         elsif listsection && !Utils.header?(line)
-          @results[current_section_index][:text].push line
+          @results[current_section_index][:text] << line
         elsif !Utils.page_number?(line) && !Utils.header?(line) && @results[current_section_index]
           # summary goes here
           unless Schema.specialsections.include? current_header
